@@ -1,8 +1,9 @@
+import Slider from "react-slick";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
     display: flex;
-`
+`;
 
 export const Container = styled.aside`
     background-color: ${(props) => props.theme.colors.background};
@@ -23,6 +24,13 @@ export const Logo = styled.img`
     margin-bottom: 15px;
 `;
 
+//para estilizar um componente, usa-se os parênteses
+export const Carousel = styled(Slider)`
+    .slick-slide {
+        margin-right: 16px;
+    }
+`;
+
 export const CarouselTitle = styled.h1`
     font-family: ${(props) => props.theme.fonts.regular};
     color: ${(props) => props.theme.colors.text};
@@ -30,4 +38,4 @@ export const CarouselTitle = styled.h1`
     font-weight: bold;
     line-height: 29px;
     margin: 16px 0;
-`
+`;

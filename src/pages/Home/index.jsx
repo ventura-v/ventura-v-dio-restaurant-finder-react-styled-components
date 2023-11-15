@@ -3,7 +3,8 @@ import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from "@material/react-material-icon";
 import Slider from "react-slick";
 
-import { Container, Search, Logo, Wrapper, CarouselTitle } from './styles'
+import { Container, Search, Logo, Wrapper, CarouselTitle, Carousel } from './styles'
+import { Card } from '../../components'
 
 import logo from '../../assets/logo.svg'
 import restaurante from '../../assets/restaurante-fake.png'
@@ -35,20 +36,16 @@ const Home = () => {
                             onChange={(e) => setInputValue(e.target.value)} />
                     </TextField>
                     <CarouselTitle>Na sua área</CarouselTitle>
-                    <Slider {...settings}>
-                        <div>
-                            <img src={restaurante} alt="" />
-                        </div>
-                        <div>
-                            <img src={restaurante} alt="" />
-                        </div>
-                        <div>
-                            <img src={restaurante} alt="" />
-                        </div>
-                        <div>
-                            <img src={restaurante} alt="" />
-                        </div>
-                    </Slider>
+                    <Carousel {...settings}>
+                        <Card photo={restaurante} title="Nome do restaurante" />
+                        <Card photo={restaurante} title="Nome do restaurante" />
+                        <Card photo={restaurante} title="Nome do restaurante" />
+                        <Card photo={restaurante} title="Nome do restaurante" />
+                        <Card photo={restaurante} title="Nome do restaurante" />
+                        <Card photo={restaurante} title="Nome do restaurante" />
+                        <Card photo={restaurante} title="Nome do restaurante" />
+                        <Card photo={restaurante} title="Nome do restaurante" />
+                    </Carousel>
                 </Search>
             </Container>
         </Wrapper>
