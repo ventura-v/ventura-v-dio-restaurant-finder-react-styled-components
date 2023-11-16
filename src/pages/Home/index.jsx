@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from "@material/react-material-icon";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 import { Container, Search, Logo, Wrapper, CarouselTitle, Carousel } from './styles'
-import { Card } from '../../components'
+import { Card, RestaurantCard } from '../../components'
 
 import logo from '../../assets/logo.svg'
 import restaurante from '../../assets/restaurante-fake.png'
@@ -47,6 +47,7 @@ const Home = () => {
                         <Card photo={restaurante} title="Nome do restaurante" />
                     </Carousel>
                 </Search>
+                <RestaurantCard />
             </Container>
         </Wrapper>
     )
