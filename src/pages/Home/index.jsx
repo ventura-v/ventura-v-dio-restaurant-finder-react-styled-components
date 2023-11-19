@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from "@material/react-material-icon";
-// import Slider from "react-slick";
 import { useSelector } from "react-redux";
 
 import { Container, Search, Logo, Wrapper, CarouselTitle, Carousel, ModalTitle, ModalContent } from './styles'
@@ -74,7 +73,8 @@ const Home = () => {
                 {restaurants.map((restaurant) => (
                     <RestaurantCard 
                         onClick={() => handleOpneModal(restaurant.place_id)}
-                        restaurant={restaurant} 
+                        restaurant={restaurant}
+                        key={restaurant.place_id}
                     />
                 ))}
             </Container>
@@ -86,7 +86,7 @@ const Home = () => {
                         <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
                         <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
                         <ModalContent>
-                            {restaurantSelected?.opening_hours?.isOpen
+                            {restaurantSelected?.opening_hours?.isOpen()
                                 ? "Aberto agora!"
                                 : "Fechado no momento"
                             }
